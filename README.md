@@ -127,14 +127,75 @@
  
 - **Advantages of LinkedList**
    - No Wastage of Memory
-   - 
+   - No need to contiguous memory
+   - Insertion and deletion, more simpler than Array
+   - Stack and Queue can be implemented by using LinkedList 
+   - Can Store any data types in Node
+   
+- **Disadvantages Of LinkedList**
+   - Random Access not possible
+   - Binary Search Algorithm is not possible because of no index value
+   - Only forward traversal is possible
+   - Reversing a Linkedlist is complex, because change all links of all nodes
+   - Extra pointer Require to store address for each node
+  
+* **Singly LinkedList**
+  - A LinkedList or Singly LinkedList is a set of nodes where each nodes has two fields, **Data** and **Link**
+  - ```code
+     Data              Link
+     Actual value       add of next node
+     
+    ```
+
+* **Doubly LinkedList**
+   - Doubly linkedList contains an extra pointer or link typically called previous node address with the next node address and a data field like singly LinkedList
+   - ```code
+          | 500 |  A  | 1000 |
+       prev add   data   next add
+        
+     ```
+* **Circular LinkedList**
+   - Linkedlist where all nodes are connected to form a circle
+   - There is no NULL at the end
+   - A Circular LinkedList can be a singly LinkedList or Doubly LinkedList
+   - ```code
+         | 2 | x |-->| 3 | y |--->| 3 | z |--->| 2 | x |
+     ```
+     
+- **Advantage of Circular LinkedList**
+   - Any nde can be starting point
+   - Traverse whole list by start at any point, just need to to stop when the first value is revisited
+   - Useful for Queue implementation, we don't need to maintain two pointers for Front and Rear if we use circular LinkedList
+   - Real Time Example, **Operating System** manages all running application through circular linkedList to give each of them a slice of time quantum to execute
+   - Circular Doubly Linked Lists are used for implementation of advanced data structures like Fibonacci Heap.
+   - Circular linked list is the basic idea of round robin scheduling algorithm
+   
 
 
+### **Stack**
+***
+   - Linear Data Structure
+   - All the elemets are arrange in a sequential manner
+   - Follows **LIFO** Last in First Out approach
+   - Example - Arranging Bread in a Packet
+
+- **Operations**
+   - **Push**  - Inserting an element on the top of stack
+   - **Pop**   - Deleting an element from the top of stack
+   
+   > ***Both opertion are perform on the top of stack***
+  
+   > **Top = -1 indicates Stack is Empty**
+   
+ - | **Overflow Condition** | **Underflow Condition** |
+   |------------------------|-------------------------|
+   |         PUSH           |        POP              |
+   | If we are trying to insert element to stack when stack is already have maximum element | If we are trying to delete an element from stack when stack is empty already |
 
 
-
-
-
+- **Implementation**
+   - Using Array
+   - Using LinkedList
 
 
 
