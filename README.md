@@ -1,11 +1,11 @@
 # Data Structure
 
-## Data Structure
+## **Data Structure**
 ***
 - Data Structure are fundamental concepts of computer science which helps us to write efficient program
 - Organizing and storing data in a efficient form in the memory
 
-### Differents types of Data Structure
+### **Differents Types of Data Structure**
 ***
 * **1. Primitve Data Structure**
 * **2. Non- Primitive Data Structure**
@@ -198,11 +198,206 @@
    - Using LinkedList
 
 
+### **Queue**
+***
+   - Linear Data Structure
+   - ALl the elements are arrange in Sequential Manner
+   - Follows **FIFO** First In First Out approach
+   - Example - Railway Ticket Counter Queue
+   
+- **Operations**
+   - **Enqueue** - Inserting an element into the Queue
+   - **Dequeue** - Deleting an element from the Queue
+   
+   > **Front - Points to the starting element**
+   > **Rare  - Points to the last element**
+   - ***Enqueue will be done at Rare***
+   - ***Dequeue will be done at Front***
+   - | **Overflow** | **Underflow** |
+     |--------------|---------------|
+     | Trying to insert element into Queue when it is full | Trying to delete element from Queue when it is empty |
+     
+   - Initially **Front == Rear == -1** Empty Queue
+   
+- ```code                   Queue
+        Delete <--- |    |    |    |    |............|     | <---- insert
+                     front                            rear
+                     dequeue                           enqueue
+  ```
+  
+- **Implementation**
+   - Using Array
+   - Using LinkedList
+   
+ 
+- **Application of Stack**
+     - Evaluation of a Post Expression
+     - Conversion of Infix Expression to Postfix Expression and Vice Versa
+     - Balancing the Parathesis
+     
+- **Prefix Expression**
+     - Example +AB
+     - ```code
+          Operator <operand1> <operand2>
+       ```
+
+- **Infix Expression**
+     - Example A+B
+     - ```code
+         <operand> Operator <operand>
+       ```
+ 
+- **Postfix Expression**
+     - Example AB+
+     - ```code
+          <operand1> <operand2> Operator
+       ```
 
 
+## **Tree**
+***
+   - Non-Linear Data Stucture, in which data is organised in Hierarchical fashion
+   - Represent hierarchical data.
+   - Hierarchical structure as elements in a Tree are arranged in multiple levels
+   - ![tree1](tree1.png)
+   
+   > **Organizing the elements witout any closed region or loop is called as Tree otherwise it forms a Graph**
+   
+- ```code                     Top
+                       A       | ------------------ Level 0
+                               |
+                  B        C   | ------------------ Level 1
+                               |
+             D    E    F       | ------------------ Level 2
+                               |
+                G    H         | ------------------ level 3
+                               V
+                             Bottom
+  ```
+  
+- **Node**
+   - ***Node means elements of a tree is called Node***
+   - Example - A, B, C, D, E, F, G, H are Nodes of a tree
+
+- **Root**
+   - ***The starting element or Node of a tree is called Root Node***
+   - Example A is the root node of the tree
+   > **Tree will have only one Root Node**
+   
+- **Edge**
+   - ***Edge is a link or connection between two nodes***
+   > **If There are N nodes in a tree then N-1 Edges are there**
+   - Example There are 8 nodes in the tree that's why 7 edges are there
+   
+   
+- **Parent Node**
+    - ***The node which is having branches, means Child is called as Parent Node***
+    - Node with branches from top to bottom
+    - ```code
+                A (parent)
+              /  \         
+            B      C
+           child   child
+      ```
+    - Example A is parent node of B and C
+      
+- **Child Node**
+    - ***Node with edges from Bottom to Top or which has parent is called Child Node***
+    - Example  B and C are the child node of A
+    - Example B,C,D,E,F,G,H are the child node
+
+- **Siblings**
+    - ***Child Node of same parent is called as Siblings***
+    - Example B and C are Siblings, D,E and F are siblings, G and H are also siblings
 
 
+- **Leaf**
+    - ***The node which is not having child is called Leaf Node***
+    - Example D,C,F,G,H are leaf nodes
 
 
+- **Internal or Intermediate Node**
+    - ***All the nodes other than leaf node is called Internal Node***
+    - Node with child and Parent is called Intermediate Node
+    - Example B and E are internal nodes
 
 
+- **Degree**
+    - ***Number of child nodes represents the degree of a node***
+    - Degree of A = 2
+    - Degree of B = 3
+    - Degree of E = 2
+    > **Maximum Degree of all nodes is called Degree Of Tree**
+    - Hence Degree of tree = 3
+
+- **Level**
+    - ***Every steps or Hierarchy in a tree is a level***
+    - Level starts from 0
+    - For Every step Hierarchy level will be incremented by 1
+    - Example :
+    - Level of the tree  = 3
+    - Level of Root node = 0
+
+- **Height**
+    - Height means, we have find height for a particular node
+    - ***Longest Path from leaf Node to that particular node is called Height***
+    - ```code
+             Particular Node
+             ^
+             |
+             |                 Height
+             |   
+             Bottom
+      ```
+      
+     - Height of B = 2 ( C <---> G <---> B )
+     - Height of A = 3 ( C <---> G <---> B <---> A )
+
+- **Depth**
+    - ***Largest path from Root Node to that Node***
+    - ```code
+           Depth of E = 2 ( A <---> B <---> E )
+           Depth of G = 3 ( A <---> B <---> E <---> G )
+           Depth of B = 1 ( A <---> B )
+      ```
+      
+- **Path**
+    - ***Sequence of Nodes from source/root to leaf or destination***
+    - Path from A to G  ->  A-B-E-G
+    
+- **Subtree**
+    - ***Node with children forms Subtree***
+    - ```code
+             A
+            / \
+           B    C
+         / | \
+        D  E   F
+          / \
+         G   H
+        
+      ```
+      
+      
+ ### **Binary Tree**
+ ***
+    - ***Binary Tree, Every Node n a tree should have at most 2 child node is called Binary Tree***
+    - Atmost 2 means 0-Node or 1-Node or 2-Node
+    - ```code
+         A | A   |     A    |     A     |      A
+           |  \  |   /  \   |   / | \   |     /  \
+           |   B |  B    C  |  B  C  D  |    B     C
+        Yes  Yes    Yes         No          / \   / \
+                                           D   E  F  G
+                                          / \
+                                          H  I
+                                           Yes
+                                        
+        ```
+      
+### **Different Types of Binary**
+  - **Full Binary Tree / Strict Binary Tree**
+  - **Almost Complete Binary Tree / Incomplete Binary Tree**
+  - **Complete Binary Tree / Perfect Binary Tree**
+  - **Left Skewed Binary Tree**
+  - **Right Skewed Binary Tree**
