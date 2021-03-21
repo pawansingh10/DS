@@ -401,3 +401,164 @@
   - **Complete Binary Tree / Perfect Binary Tree**
   - **Left Skewed Binary Tree**
   - **Right Skewed Binary Tree**
+
+* **Full Binary Tree**
+  - ***Every node must have 2 child except leaf nodes***
+  - ```code
+              A        |        A
+             / \       |       /  \
+            B   C      |      B    C
+           / \         |     / \
+          D   E        |    D   E
+                       |   / \
+                       |  F    G
+    ```
+  
+* **Incomplete Binary Tree**
+  - ***Every node must have two children in all the levels except in last level but field from Left to Right***
+  - ```code
+                    A                                    A
+                   / \                                 /   \
+                  B    C                              B      C
+                 / \                                 /  \    / \
+                D   E                               D    E  F   G
+               / \                                 / \
+              F    G                              H   I
+              STRICTLY BINARY TREE                 INCOMPLETE BINARY TREE
+                   
+    ```
+    
+ * **Complete Binary Tree / Perfect Binary Tree**
+   - Every Node must have two children in all the level
+   - Each level must be 2^L nodes, L-level
+   - ```code
+                   A            -------  Level-0   2^0=1
+                 /   \         
+                B      C        -------- Level-1  2^1=2
+               / \     / \
+              D   E    F   G    -------- Level-2  2^2=4
+             / \  / \ / \  / \ 
+            H   I J  K L M N  O  ------- Level-3  2^3=8
+             Complete Binary Tree
+     ```
+     
+ - **Left Skewed Binary Tree**
+   - A tree should contain only left child
+   - ```code
+                 A
+                /
+               B
+              /
+             C
+            /
+           D
+             Left Skewed Tree 
+     ```
+     
+ - **Right Skewed Binary Tree**
+   - A tree should contains only right child
+   - ```code
+                A
+                 \
+                  B
+                   \
+                    C
+                     \
+                      D
+             Right Skewed
+     ```
+     
+     
+ - **Implementation of Tree**
+   - Using Linear or Sequential Way (Array)
+   - Using List concept (Doubly LinkedList)
+
+- **Tree Traversal**
+  - There are 3 different ways we can traverse a node in a tree
+  - ```code
+                  A
+                 / \
+                B    C
+               /    / \
+              D    E    F
+                    \   / \
+                     G  H  I
+     
+    ```
+  - **1. Inorder Traversal LRR**
+  - ```code Left_Child --- Root_node --- Right_child  ```
+  - D B A G E C H F I
+  - **2. Preorder Traversal RLR**
+  - ```code Root_node --- Left_Child --- Right_Child ```
+  - A B D C E G F H I
+  - **3. Postorder Traversal LRR**
+  - ```code Left_Child -- Right_Child---Root_node ```
+  - D B G E H I F C A
+
+### **B-Tree vs  B+ Tree**
+***
+- **B-Tree**
+  - A B-Tree is a self balancing tree data structure that maintains sorted data and allows searches, sequencial access, insertion & deletion in logrithmic time
+  - The B-Tree is a generalization of Binary Search Tree in that a node can have more than two child
+- **B+ Tree**
+  - B+ Tree, each node contains key only (not pair) and all pointers to the data records exists at leaf level only
+
+
+- **AVL-Tree**
+  - **Adelson Velski Lands**
+  - AVL Trees are Hight Balancing BST
+  - It checks the Height of Left and Right Subtree and Assures that difference is **-1, 0, +1** This difference is known as ***Balance Factor***
+ 
+- **Different Operation applied on AVL**
+  - LL Rotation
+  - LR Rotation
+  - RR Rotation
+  - RF Rotation
+
+
+
+### **Binary Search Tree**
+***
+   - Binary Search tree can be defined as a class of binary trees, in which the nodes are arranged in a specific order. This is also called ordered binary tree.
+   - In a binary search tree, the value of all the nodes in the left sub-tree is less than the value of the root
+   - Value of all the nodes in the right sub-tree is greater than or equal to the value of the root
+   - ```code
+                      30
+                    /    \
+                   15      60
+                  /  \     /  \
+                 7   22   45  75
+                     / \
+                    17  27
+                    
+                 BINARY SEARCH TREE 
+                    
+     ```
+     
+  - **Advantages of Binary Search Tree**
+    - Searching become very efficient in a binary search tree 
+    - Binary search tree is considered as efficient data structure in compare to arrays and linked lists
+    - Searching for an element in a binary search tree takes **O(logN)** time
+
+
+
+### **Red and Black Tree**
+***
+   - The red-Black tree is a binary search tree
+   - Each node in the Red-black tree contains an extra bit that represents a color to ensure that the tree is balanced during any operations performed on the tree like insertion, deletion, etc
+
+- **Properties of Red & Black Tree**
+   - It is a self-balancing Binary Search tree. Here, self-balancing means that it balances the tree itself by either doing the rotations or recoloring the nodes
+   - This tree data structure is named as a Red-Black tree as each node is either Red or Black in color
+   - Every node stores one extra information known as a bit that represents the color of the node. For example, 0 bit denotes the black color while 1 bit denotes the red color of the node.
+   - In the Red-Black tree, the root node is always black in color
+   - In the Red-Black tree, the nodes that have no child are considered the internal nodes and these nodes are connected to the NIL nodes that are always black in color. The NIL nodes are the leaf nodes in the Red-Black tree
+   - If the node is Red, then its children should be in Black color
+   - There should be no red-red parent-child relationship.
+   - Every path from a node to any of its descendant's NIL node should have same number of black nodes.
+
+
+### **Is every AVL tree can be a Red-Black tree?**
+***
+- Yes, every AVL tree can be a Red-Black tree if we color each node either by Red or Black color. But every Red-Black tree is not an AVL because the AVL tree is strictly height-balanced while the Red-Black tree is not completely height-balanced.
+
