@@ -562,3 +562,103 @@
 ***
 - Yes, every AVL tree can be a Red-Black tree if we color each node either by Red or Black color. But every Red-Black tree is not an AVL because the AVL tree is strictly height-balanced while the Red-Black tree is not completely height-balanced.
 
+
+
+## **Graph**
+***
+  - A Graph is a non-linear data structure consisting of nodes and edges
+  > **A Graph consists of a finite set of vertices(or nodes) and set of Edges which connect a pair of nodes**
+  - Graph can be represented using Adjancency Matrix and Adjacency List
+ 
+  - ![graph1](graph1.png)
+  
+  - A graph can be seen as a cyclic tree, where the vertices (Nodes) maintain any complex relationship among them instead of having parent child relationship
+  - A graph G can be defined as an ordered set G(V, E) where V(G) represents the set of vertices and E(G) represents the set of edges which are used to connect these vertices
+
+- **Directed Graph vs Undirected Graph**
+- **UnDirected Graph**
+  - In an undirected graph, edges are not associated with the directions with them
+  - ![graph3](graph3.png)
+
+- **Directed Graph**
+  - In a directed graph, edges form an ordered pair associated with directions
+  - ![graph2](graph2.png)
+
+
+- **Path**
+  - A path can be defined as the sequence of nodes that are followed in order to reach some terminal node V from the initial node U.
+
+- **Closed Path**
+  - A path will be called as closed path if the initial node is same as terminal node
+  - A path will be closed path if V0=VN
+
+
+- **Cycle**
+  - A cycle can be defined as the path which has no repeated edges or vertices except the first and last vertices
+
+
+- **Connected Graph**
+  - A connected graph is the one in which some path exists between every two vertices (u, v) in V.
+  - There are no isolated nodes in connected graph
+  
+- **Complete Graph**
+  - A complete graph is the one in which every node is connected with all other nodes
+  - A complete graph contain n(n-1)/2 edges where n is the number of nodes in the graph
+
+- **Weighted Graph**
+  - In a weighted graph, each edge is assigned with some data such as length or weight
+  - The weight of an edge e can be given as w(e) which must be a positive (+) value indicating the cost of traversing the edge
+
+- **Digraph**
+  - A digraph is a directed graph in which each edge of the graph is associated with some direction and the traversing can be done only in the specified direction
+
+
+- **Loop**
+  - An edge that is associated with the similar end points can be called as Loop
+
+- **Adjacent Nodes**
+  - If two nodes u and v are connected via an edge e, then the nodes u and v are called as neighbours or adjacent nodes
+
+- **Degree of the Node**
+  - A degree of a node is the number of edges that are connected with that node
+  - A node with degree 0 is called as isolated node
+
+
+### Application of Graph
+***
+  - **Computer Network**
+  - **Circuit Designing**
+  - **Neural Network**
+  - **DNA structure of Species**
+
+- **Vertex**
+  - Vertex is a point where lines meet
+  - Node is called Vertex
+
+- **Eccentricity**
+  - Maximum distance between a vertex to all other vertices
+
+- **Spanning Tree**
+  - It is a subset of a graph, which has all the vertices covered with minimum possible number of edges
+  - It doesn't have Cycle and Can't be disconnected
+
+- **Minimum Spanning Tree**
+  - It is a spanning tree having minimum weight than anyother spanning tree in the same graph
+  - Prism Algorithm
+  - Kruskal Algorithm
+
+
+### **Graph Traversal**
+***
+- Traversing the graph means examining all the nodes and vertices of the graph
+- There are two standard methods by using which, we can traverse the graphs
+  - **1. BFS**
+  - **2. DFS**
+
+- **BFS - Bredth First Search**
+  - It is used to traverse the graph in Horizontal or bredthwise manner
+  - The data structure which is being used in BFS is **Queue**
+
+- **DFS - Depth First Search**
+  - It is used to traverse a graph in vertical or depthwise manner
+  - The data structure which is being used in DFS is **stack**
